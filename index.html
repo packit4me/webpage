@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12850853-11']);
+  _gaq.push(['_setDomainName', 'packit4.me']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></head>
+<body>
+I have a problem.
+<p />
+I hate it when I want to install software and its not packaged using my distributions default package manager.
+<p />
+Typically I'm on RPM based distributions, but I've run across the same thing elsewhere.  There are plenty of repositories available that have lots of software, but unfortunately there are some bits that don't make it into these.
+<p />
+<ol>
+<li>First is commercial software.  I can't redistribute most of that for legal reasons, but I can help facilitate finding good spec files for building your own package! If you package a commercial software and have a spec to share, <a href="mailto:help@packit4.me">contact me!</a></li>
+<li>The other is Puppet modules.  What? package puppet modules?  Why would someone do that?  Well.. its cause if you like managing your systems with RPMs there almost no clean ways for you to manage the Puppet modules you download from Pupept Forge.  There is a new system called 'Pulp' that does allow you to manage your own private Puppet Forge, and thats still a pretty good idea.  However, I wanted to give this a shot sooo..</li>
+</ol>
+
+<strong>Introducing the PackIt4.Me Puppet Module Yum repository!</strong>
+<p>
+How to use it?  Well when its ready you will just install this <a href="http://packit4.me/packit4me-puppetmodules-release.rpm">rpm</a>.  You can then download any puppet module, <strong>and</strong> its dependencies, with yum!
+<p>
+<strong>Status:</strong>
+<br />
+<ul>
+<li>Spec file: I've got the template layed out.  Its worked on most modules i've used before, so cross your fingers.</li>
+<li>Forge scrapper: Calling this <a href="http://github.com/gregswift/blacksmith">blacksmith</a>.  Running through some initial tests with it now.
+  <ul><li>Pulling the metadata...done</li>
+      <li>Downloading release files...done</li>
+      <li>Generate the spec files...done</li>
+      <li>Pull changelog from git for the package?...</li>
+      <li>Store them in version control?...</li>
+      <li>Build the RPM...</li>
+      <li>Update the repo...</li>
+      <li>Store local info related to previous builds so I know when to trigger new release updates...</li>
+  </ul>
+</li></ul>
+</body>
+
+</html>
